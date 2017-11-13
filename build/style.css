@@ -1,0 +1,59 @@
+.hidelist {
+    display: none;
+}
+
+.activelist {
+    display: block;
+}
+
+ul {
+    list-style: none;
+    padding-left: 0;
+    text-align: right;
+    width: 45px;
+    border-left:  1px solid #ccc;
+    border-right:  1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+}
+
+ul li {
+    width: 100%;
+    padding-right: 18px;
+}
+
+ul li:hover {
+    background: darkslategray;
+    color:white;
+}
+
+.limit {
+    min-width: 45px;
+    width: 45px;
+    text-align: right;
+    border: 1px solid #ccc;
+}
+
+#pagination {
+    text-align: center;
+}
+.btn-primary {
+    color: #fff;
+    background-color: lightslategray;
+    border-color: darkslategray;
+    
+}
+.btn-primary.active.focus, .btn-primary.active:focus, .btn-primary.active:hover, .btn-primary:active.focus, .btn-primary:active:focus, .btn-primary:active:hover, .open>.dropdown-toggle.btn-primary.focus, .open>.dropdown-toggle.btn-primary:focus, .open>.dropdown-toggle.btn-primary:hover, .btn-primary:hover, .btn-primary:active, .btn.btn-primary.btn-sm.active {
+    color: #fff;
+    background-color: darkslategray;
+    border-color: lightslategray;
+}
+
+#pagination button {
+    margin: 2px 5px;
+}
+
+@media screen and (max-width: 480px) {
+    .table {
+        font-size: 0.7em;
+    }
+}
