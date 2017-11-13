@@ -15,17 +15,13 @@ const headersForTable = () => { return ['Name', 'Date', 'Time', 'Uploads', 'Down
 
 let pager = limit()[0];
 
-console.log(dataToDisplay);
-
 const data = curry(splitData)(dataToDisplay);
 
 // ***********************
 const uldiv = createHtml('div');
 const ulspan = createHtml('div');
-// const arrowHolder = createHtml('span');
 const ul = createHtml('ul');
 createAttr(ulspan, 'class', ' limit ');
-// appendElement(arrowHolder, uldiv);
 appendElement(ulspan, uldiv);
 appendElement(ul, uldiv);
 
@@ -34,9 +30,6 @@ const s = ulspan.getElementsByTagName('span');
 
 createAttr(ul, 'class', ' hidelist ');
 const toggleClass = () => {
-	
-	// s[0].innerHTML = '▲';
-	// ul.classList.toggle('activelist');
 	if(ul.classList.contains('activelist')) {
 		ul.classList.remove('activelist');
 		s[0].innerHTML = '▼';
@@ -87,7 +80,6 @@ window.renderPage = (e) => {
 	tbodyTemplate(data, pager, e.target.value);
 	appendElement(tbody, tbl);
 	pagination(data(pager));
-	
 	b[e.target.value].className = 'btn btn-primary btn-sm active ';
 }
 
