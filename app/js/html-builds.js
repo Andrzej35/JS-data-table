@@ -1,6 +1,3 @@
-// import dataToDisplay from './data';
-// import { curry, splitData, compose, mapper } from './lib';
-
 // html element creation
 const createHtml = (el) => { return document.createElement(el);};
 
