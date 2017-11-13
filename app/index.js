@@ -57,6 +57,7 @@ window.displayPage = (e) => {
 	tbodyTemplate(data, e.target.value, 0);
 	appendElement(tbody, tbl);
 	pagination(data(e.target.value));
+	b[0].className += ' active ';
 };
 
 const drop = limit().map((x, i) => ul.innerHTML += `<li value="${x}" onClick="displayPage(event)">${x}</li>`);
