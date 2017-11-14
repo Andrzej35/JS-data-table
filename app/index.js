@@ -117,9 +117,6 @@ window.searchTable = function(e) {
 		
 		if((x.name.toUpperCase().indexOf(e.target.value.toUpperCase())) > -1) {
 			tbody.innerHTML += tbodyTmpl(x);
-		} else {
-			tbody.innerHTML = 'Records have not found'
 		}
-
 	});
 }
