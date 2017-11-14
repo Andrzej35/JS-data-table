@@ -10,15 +10,17 @@ ul {
     list-style: none;
     padding-left: 0;
     text-align: right;
-    width: 45px;
+    width: 75px;
     border-left:  1px solid #ccc;
     border-right:  1px solid #ccc;
     border-bottom: 1px solid #ccc;
+    font-size:  16px;
 }
 
 ul li {
     width: 100%;
-    padding-right: 18px;
+    padding-right: 32px;
+    padding-top: 5px;
 }
 
 ul li:hover {
@@ -28,9 +30,16 @@ ul li:hover {
 
 .limit {
     min-width: 45px;
-    width: 45px;
+    width: 75px;
     text-align: right;
     border: 1px solid #ccc;
+    padding: 5px 0;
+    font-size: 16px;
+    background: #e3f5f5; /* For browsers that do not support gradients */
+    background: -webkit-linear-gradient(#e3f5f5, white); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(#e3f5f5, white); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(#e3f5f5, white); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(#e3f5f5, white); /* Standard syntax */
 }
 
 #pagination {
@@ -50,6 +59,33 @@ ul li:hover {
 
 #pagination button {
     margin: 2px 5px;
+}
+span.arrow-down {
+    color: darkslategray;
+    border-left: 1px solid lightgray;
+    padding: 8px 5px;
+    background: #e3f5f5; /* For browsers that do not support gradients */
+    background: -webkit-linear-gradient(#e3f5f5, white); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(#e3f5f5, white); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(#e3f5f5, white); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(#e3f5f5, white); /* Standard syntax */
+}
+
+tr:hover {
+    background: #e3f5f5;
+}
+
+tr th {
+    background: darkslategray;
+    color:white;
+}
+
+.table {
+    margin-top:20px;
+}
+
+input#search {
+    height: 34px;
 }
 
 @media screen and (max-width: 480px) {
