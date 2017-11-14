@@ -90,6 +90,31 @@ const pagination = (ar) => {
 	});
 }
 
+window.searchTable = function(e) {
+	
+	tbody.innerHTML = '';
+	pg.innerHTML ='';
+
+	dataToDisplay.filter(function(x) {
+		
+		if((x.name.toUpperCase().indexOf(e.target.value.toUpperCase())) > -1) {
+			tbody.innerHTML += tbodyTmpl(x);
+		} else {
+			tbody.innerHTML = 'Records have not found.'
+		}
+
+	});
+}
+
+const search = createHtml('input');
+createAttr(search, 'type', 'text');
+createAttr(search, 'id', 'search');
+createAttr(search, 'class', 'pull-right');
+createAttr(search, 'placeholder', 'Search...');
+createAttr(search, 'onkeyup', 'searchTable(event)');
+
+appendElement(search, container);
+
 appendElement(uldiv, container);
 appendElement(tr, thead);
 appendElement(thead, tbl);
@@ -98,6 +123,3 @@ appendElement(tbl, container);
 appendElement(pg, container);
 pagination(data(pager));
 b[0].className += ' active ';
-
-
-
