@@ -5,7 +5,7 @@ import { createHtml, createAttr, appendElement, createTrailingZeroes, createDate
 
 const container = document.getElementById('app');
 const template = (x) => `<th>${x}</th>`;
-const tbodyTmpl = (x) => `<tr><td>${x.name}</td><td>${createDateFormat(x.date).date}</td><td>${createDateFormat(x.date).hours}:${createDateFormat(x.date).minutes}${createDateFormat(x.date).ampm}</td><td>${x.uploads}</td><td>${x.downloads}</td></tr>`
+const tbodyTmpl = (x) => `<tr><td id="${headersForTable()[0]}-column-${x.id}">${x.name}</td><td id="${headersForTable()[1]}-column-${x.id}">${createDateFormat(x.date).date}</td><td  id="${headersForTable()[2]}-column-${x.id}">${createDateFormat(x.date).hours}:${createDateFormat(x.date).minutes}${createDateFormat(x.date).ampm}</td><td id="${headersForTable()[3]}-column-${x.id}">${x.uploads}</td><td  id="${headersForTable()[4]}-column-${x.id}">${x.downloads}</td></tr>`;
 
 // limit data
 const limit = () => { return [25, 50, 100]};
@@ -68,7 +68,7 @@ const tbody = createHtml('tbody');
 
 const tbodyTemplate = (d, lim, n=0) => {
   tbody.innerHTML += mapper(tbodyTmpl, d(lim)[n]);
-}
+};
 
 headerTemplate();
 tbodyTemplate(data, pager);
@@ -81,14 +81,14 @@ window.renderPage = (e) => {
 	appendElement(tbody, tbl);
 	pagination(data(pager));
 	b[e.target.value].className = 'btn btn-primary btn-sm active ';
-}
+};
 
 
 const pagination = (ar) => {
 	return ar.forEach((x, i) => {
 		pg.innerHTML += `<button class="btn btn-primary btn-sm" value="${i}" onclick="renderPage(event)">${i + 1}</button>`;
 	});
-}
+};
 
 const search = createHtml('input');
 createAttr(search, 'type', 'text');
@@ -108,6 +108,7 @@ appendElement(pg, container);
 pagination(data(pager));
 b[0].className += ' active ';
 
+
 window.searchTable = function(e) {
 
 	tbody.innerHTML = '';
@@ -118,5 +119,6 @@ window.searchTable = function(e) {
 		if((x.name.toUpperCase().indexOf(e.target.value.toUpperCase())) > -1) {
 			tbody.innerHTML += tbodyTmpl(x);
 		}
+
 	});
-}
+};
